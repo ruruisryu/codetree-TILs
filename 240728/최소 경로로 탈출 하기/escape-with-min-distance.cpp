@@ -38,5 +38,5 @@ int main() {
     }
 
 
-    cout << dist[n-1][n-1]-1;
+    cout << dist[n-1][m-1]-1;
 }
