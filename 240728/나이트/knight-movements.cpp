@@ -36,4 +36,5 @@ int main() {
             }
         }
     }
+    cout << dist[dest.X][dest.Y] -1;
 }
