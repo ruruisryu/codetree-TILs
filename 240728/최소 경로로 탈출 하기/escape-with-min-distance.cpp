@@ -30,7 +30,7 @@ int main() {
         for(int i=0; i<4; i++){
             int nx = cur.X + dx[i];
             int ny = cur.Y + dy[i];
-            if(nx<0 || nx>n || ny<0 || ny>n) continue;
+            if(nx<0 || nx>n || ny<0 || ny>m) continue;
             if(dist[nx][ny] != 0 || board[nx][ny] == 0)continue;
             dist[nx][ny] = dist[cur.X][cur.Y] +1;
             Q.push({nx, ny});
