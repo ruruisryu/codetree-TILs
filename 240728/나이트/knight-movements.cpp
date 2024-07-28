@@ -36,5 +36,10 @@ int main() {
             }
         }
     }
-    cout << dist[dest.X][dest.Y] -1;
+    if(dist[nx][ny] == 0){
+        cout << -1;
+    }
+    else{
+        cout << dist[nx][ny]-1;
+    }
 }
