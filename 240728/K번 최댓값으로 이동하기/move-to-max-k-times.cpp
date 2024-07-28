@@ -62,8 +62,9 @@ int main() {
 
     // BFS
     for(int i=0; i<k; i++){
-        cur = getNextPos(cur);
-        if(cur.X == 0) break;
+        pos tmp = getNextPos(cur);
+        if(tmp.X == 0) break;
+        cur = tmp;
         vis.assign(101, vector<bool>(101, false));
     }
 
