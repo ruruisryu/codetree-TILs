@@ -15,7 +15,7 @@ void quick_sort(int st, int en){
         swap(arr[l], arr[r]);
     }
     swap(arr[st], arr[r]);
-    quick_sort(st, r-1);
+    quick_sort(st, r);
     quick_sort(r+1, en);
 }
 
