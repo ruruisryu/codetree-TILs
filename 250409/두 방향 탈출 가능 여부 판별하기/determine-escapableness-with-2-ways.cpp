@@ -15,7 +15,7 @@ int dy[] = {0, 1};
 void DFS(int x, int y, int n, int m, vector<vector<int>>& board)
 {
     board[x][y] = VISITED;
-    for(int i = 0; i<2; i++){
+    for(int i = 0; i<sizeof(dx)/sizeof(dx[0]); i++){
         int new_x = x + dx[i];
         int new_y = y + dy[i];
 
