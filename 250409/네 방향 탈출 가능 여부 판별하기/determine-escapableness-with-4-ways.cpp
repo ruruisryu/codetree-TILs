@@ -20,9 +20,9 @@ void BFS(int n, int m, vector<vector<int>>& board){
     queue<pi> q;
     // 시작 칸을 큐에 넣고 방문 처리
     q.push({0,0});
-    board[0][0] = VISITED;
 
     while(!q.empty()){
+    board[0][0] = VISITED;
         pi curr_pi = q.front(); q.pop();
         for(int i=0; i<size(dx); i++){
             int x = curr_pi.X + dx[i];
@@ -31,7 +31,6 @@ void BFS(int n, int m, vector<vector<int>>& board){
                 continue;
             }
             if(board[x][y] == EMPTY){
-                board[x][y] = VISITED;
                 q.push({x, y});
             }
         }
