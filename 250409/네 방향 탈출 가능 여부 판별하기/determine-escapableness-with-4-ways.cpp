@@ -22,8 +22,8 @@ void BFS(int n, int m, vector<vector<int>>& board){
     q.push({0,0});
 
     while(!q.empty()){
-    board[0][0] = VISITED;
         pi curr_pi = q.front(); q.pop();
+        board[curr_pi.X][curr_pi.Y] = VISITED;
         for(int i=0; i<size(dx); i++){
             int x = curr_pi.X + dx[i];
             int y = curr_pi.Y + dy[i];
