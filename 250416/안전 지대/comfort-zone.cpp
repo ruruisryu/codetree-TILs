@@ -9,30 +9,30 @@ using namespace std;
 int dx[] = {1, 0, -1, 0};
 int dy[] = {0, 1, 0, -1};
 
-void DFS(int x, int y, int k, int n, vector<vector<int>>& board){
+void DFS(int x, int y, int k, int n, int m, vector<vector<int>>& board){
     board[x][y] = VISITED;
     for(int i=0; i<4; i++){
         int new_x = x + dx[i];
         int new_y = y + dy[i];
 
-        if(new_x < 0 || new_x >= n || new_y < 0 || new_y >= n){
+        if(new_x < 0 || new_x >= n || new_y < 0 || new_y >= m){
             continue;
         }
 
         if(board[new_x][new_y] > k){
-            DFS(new_x, new_y, k, n, board);
+            DFS(new_x, new_y, k, n, m, board);
         }
     }
 }
 
-int getSafeZoneNum(int n, int k, vector<vector<int>> board){
+int getSafeZoneNum(int n, int m, int k, vector<vector<int>> board){
     int safe_zone_num = 0;
 
     for(int i=0; i<n; i++){
-        for(int j=0; j<n; j++){
+        for(int j=0; j<m; j++){
             // 아직 방문하지 않은 안전 영역이라면 탐색 시작
             if(board[i][j] > k){
-                DFS(i, j, k, n, board);
+                DFS(i, j, k, n, m, board);
                 safe_zone_num++;
             }
         }
@@ -56,7 +56,7 @@ int main() {
     int result_k = 0;
     int result_sz_num = 0;
     for(int i=1; i<=k; i++){
-        int temp_sz_num = getSafeZoneNum(n, i, board);
+        int temp_sz_num = getSafeZoneNum(n, m, i, board);
         if(result_sz_num < temp_sz_num){
             result_k = i;
             result_sz_num = temp_sz_num;
